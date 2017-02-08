@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>引言</title>
+    <style>
+        hr{
+            height: .5em;
+            background: currentColor;
+        }
+
+        .callout{
+            position:relative;
+            background: red;
+        }
+        .callout::before{
+            content: "";
+            position: absolute;
+            top: -.4em;
+            left: 1em;
+            padding: .35em;
+            background: inherit;
+            border: inherit;
+            border-right: 0;
+            border-bottom: 0;
+            transform: rotate(45deg);
+        }
+
+    /*用（/）作为分隔，是为了消除歧义*/
+    .bg{
+        background: url(tr.png) no-repeat top right / 2em 2em,
+                            url(br.png) no-repeat bottom right / 2em 2em,
+                            url(bl.png) no-repeat bottom right / 2em 2em;
+    }
+    .bg-modify{
+        background: url(tr.png),
+                            url(br.png),
+                            url(bl.png);
+        background-size: 2em 2em;
+        background-repeat: no -repeat;
+    }
+    </style>
+</head>
+<body>
+<hr>
+<div class="callout"></div>
+</body>
+</html>

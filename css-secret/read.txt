@@ -1,0 +1,12 @@
+http://play.csssecrets.io/ 源码
+浏览器兼容性信息
+Can I Use （http://caniuse.com）
+WebPlatform.org  （http://webplatform.org）
+Mozilla Developer Network （http://developer.mozilla.org）
+维基百科上的“浏览器排版引擎对比（css兼容性）”（https://en.wikipedia.org/wiki/Comparison_of_web_browser_engines_(cascading_style_sheets)）
+
+
+使用Modernizr(https://modernizr.com/)这样的工具来给根元素(<html>)添加一些辅助类，比如textshadow或no-textshadow等。
+
+
+24

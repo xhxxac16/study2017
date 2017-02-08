@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>灵活的背景定位</title>
+    <style>
+        .box {
+            background: url(images/code-pirate.svg) no-repeat #58a;
+            background-position: right 20px bottom 10px;
+
+            /* Styling */
+            max-width: 10em;
+            min-height: 5em;
+            padding: 10px;
+            color: white;
+            font: 100%/1 sans-serif;
+        }
+        .box1 {
+            background: url(images/code-pirate.svg)
+                        no-repeat bottom right #58a;
+            background-position: right 20px bottom 10px;
+
+            /* Styling */
+            max-width: 10em;
+            min-height: 5em;
+            padding: 10px;
+            color: white;
+            font: 100%/1 sans-serif;
+        }
+        .box2 {
+            padding: 10px;
+            background: url(images/code-pirate.svg) no-repeat #58a;
+            background-position: right 10px bottom 10px;
+
+            /* Styling */
+            max-width: 10em;
+            min-height: 5em;
+            color: white;
+            font: 100%/1 sans-serif;
+        }
+        .box3 {
+            padding: 10px;
+            background: url(images/code-pirate.svg) no-repeat #58a
+                                bottom right; /* 或 100% 100% */
+            background-origin:content-box;
+
+            /* Styling */
+            max-width: 10em;
+            min-height: 5em;
+            color: white;
+            font: 100%/1 sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"> background-position</div>
+    <div class="box1"> background-position</div>
+    <div class="box2"> background-position</div>
+</body>
+</html>

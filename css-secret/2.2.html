@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>多重边框</title>
+    <style>
+        .box{
+            width:100px;
+            height:100px;
+            margin:100px auto 0;
+            background: yellowgreen;
+            box-shadow: 0 0 0 10px #655,
+                                0 0 0 15px deeppink,
+                                0 2px 5px 15px rgba(0,0,0,.6);
+            border-radius: 10px;
+        }
+        .box1{
+            width:100px;
+            height:100px;
+            margin:100px auto 0;
+            background: yellowgreen;
+            border: 10px solid #655;
+            outline: 5px solid deeppink;
+            border-radius:10px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">多重边框 box-shadow只能模拟实线边框，虚线边框效果就没辙了</div>
+<div class="box1">
+<ul>
+    <li>outline实现box-shadow的边框效果，但是只适合双层”边框“的场景，因为outline并不能接受用逗号分隔的多个值。</li>
+    <li>边框不一定会贴合border-raduis属性产生的圆角</li>
+</ul>
+</div>
+</body>
+</html>
