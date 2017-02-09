@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab</title>
+</head>
+<body>
+<script type="text/javascript" src="lab.min.js"></script>
+<script type="text/javascript">
+$LAB.script("first-file.js").wait()
+    .script("the-rest.js")
+    .wait(function(){
+        Application.init();
+    });
+</script>
+</body>
+</html>
