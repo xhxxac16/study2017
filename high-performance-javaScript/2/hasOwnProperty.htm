@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>是否具有特定名称的实例成员，是否具有某个名称的属性</title>
+</head>
+<body>
+    <script>
+       var book = {
+            title: "High Performance JavaScript",
+            publisher: "Yahoo! Press"
+        };
+        alert(book.hasOwnProperty("title")); //true
+        alert(book.hasOwnProperty("toString")); //false
+        alert("title" in book); //true
+        alert("toString" in book); //true
+
+    </script>
+</body>
+</html>

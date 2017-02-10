@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>identifier</title>
+</head>
+<body>
+<a href="">1</a>
+<a href="">2</a>
+<a href="">3</a>
+    <script>
+        function initUI(){
+            var bd = document.body,
+            links = document.getElementsByTagName("a"),
+            i = 0,
+            len = links.length;
+            while(i < len){
+                update(links[i++]);
+            }
+            document.getElementById("go-btn").onclick = function(){
+                start();
+            };
+            bd.className = "active";
+        }
+    </script>
+</body>
+</html>

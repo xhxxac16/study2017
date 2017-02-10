@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>try catch</title>
+</head>
+<body>
+    <script>
+       try {
+            methodThatMightCauseAnError();
+        } catch (ex){
+            alert(ex.message); //scope chain is augmented here
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Book(title, publisher){
+            this.title = title;
+            this.publisher = publisher;
+        }
+        Book.prototype.sayTitle = function(){
+            alert(this.title);
+        };
+        var book1 = new Book("High Performance JavaScript", "Yahoo! Press");
+        var book2 = new Book("JavaScript: The Good Parts", "Yahoo! Press");
+        alert(book1 instanceof Book); //true
+        alert(book1 instanceof Object); //true
+        book1.sayTitle(); //"High Performance JavaScript"
+        alert(book1.toString()); //"[object Object]"
+    </script>
+</body>
+</html>
