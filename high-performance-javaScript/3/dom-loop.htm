@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM操作</title>
+</head>
+<body>
+<div id="here"></div>
+<script>
+    function innerHTMLLoop() {
+        for (var count = 0; count < 15000; count++) {
+            document.getElementById('here').innerHTML += 'a';
+        }
+    }
+    innerHTMLLoop();
+</script>
+</body>
+</html>

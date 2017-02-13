@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM操作</title>
+</head>
+<body>
+<div id="here"></div>
+<script>
+   function innerHTMLLoop2() {
+    var content = '';
+    for (var count = 0; count < 15000; count++) {
+        content += 'a';
+    }
+    document.getElementById('here').innerHTML += content;
+    }
+    innerHTMLLoop2();
+</script>
+</body>
+</html>

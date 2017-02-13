@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+var errs = document.querySelectorAll('div.warning, div.notice');
+
+var errs = [],
+divs = document.getElementsByTagName_r('div'),
+classname = '';
+for (var i = 0, len = divs.length; i < len; i++) {
+classname = divs[i].className;
+if (classname === 'notice' || classname === 'warning') {
+errs.push(divs[i]);
+}
+}
+</script>
+</body>
+</html>

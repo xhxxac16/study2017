@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+function toArray(coll) {
+    for (var i = 0, a = [], len = coll.length; i < len; i++) {
+    a[i] = coll[i];
+    }
+    return a;
+}
+
+var coll = document.getElementsByTagName('div');
+var ar = toArray(coll);
+
+
+//slower
+function loopCollection() {
+for (var count = 0; count < coll.length; count++) {
+}
+}
+// faster
+function loopCopiedArray() {
+for (var count = 0; count < arr.length; count++) {
+}
+}
+</script>
+</body>
+</html>

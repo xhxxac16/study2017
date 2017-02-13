@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+测试的内容呢
+<script>
+// setting and retrieving styles in succession
+var computed,
+tmp = '',
+bodystyle = document.body.style;
+if (document.body.currentStyle) { // IE, Opera
+computed = document.body.currentStyle;
+} else { // W3C
+computed = document.defaultView.getComputedStyle(document.body, '');
+}
+// inefficient way of modifying the same property
+// and retrieving style information right after
+bodystyle.color = 'red';
+tmp = computed.backgroundColor;
+bodystyle.color = 'white';
+tmp = computed.backgroundImage;
+bodystyle.color = 'green';
+tmp = computed.backgroundAttachment;
+</script>
+
+</body>
+</html>

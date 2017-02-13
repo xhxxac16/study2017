@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cloneNode</title>
+</head>
+<body>
+<script>
+function tableClonedDOM() {
+var i, table, thead, tbody, tr, th, td, a, ul, li,
+oth = document.createElement('th'),
+otd = document.createElement('td'),
+otr = document.createElement('tr'),
+oa = document.createElement('a'),
+oli = document.createElement('li'),
+oul = document.createElement('ul');
+tbody = document.createElement('tbody');
+for (i = 1; i <= 1000; i++) {
+tr = otr.cloneNode(false);
+td = otd.cloneNode(false);
+td.appendChild(document.createTextNode((i % 2) ? 'yes' : 'no'));
+tr.appendChild(td);
+td = otd.cloneNode(false);
+td.appendChild(document.createTextNode(i));
+tr.appendChild(td);
+td = otd.cloneNode(false);
+td.appendChild(document.createTextNode('my name is #' + i));
+tr.appendChild(td);
+// ... the rest of the loop ...
+}
+// ... the rest of the table generation ...
+}
+
+</script>
+</body>
+</html>

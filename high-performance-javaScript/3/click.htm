@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<ul id="menu">
+<li>
+<a href="menu1.html">menu #1</a>
+</li>
+<li>
+<a href="menu2.html">menu #2</a>
+</li>
+</ul>
+    <script>
+document.getElementById('menu').onclick = function(e) {
+// x-browser target
+e = e || window.event;
+var target = e.target || e.srcElement;
+var pageid, hrefparts;
+// only interesed in hrefs
+// exit the function on non-link clicks
+
+if (target.nodeName !== 'A') {
+return;
+}
+// figure out page ID from the link
+hrefparts = target.href.split('/');
+pageid = hrefparts[hrefparts.length - 1];
+pageid = pageid.replace('.html', '');
+// update the page
+ajaxRequest('xhr.php?page=' + id, updatePageContents);
+// x-browser prevent default action and cancel bubbling
+if (typeof e.preventDefault === 'function') {
+e.preventDefault();
+e.stopPropagation();
+} else {
+e.returnValue = false;
+e.cancelBubble = true;
+}
+};
+    </script>
+</body>
+</html>

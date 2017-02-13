@@ -46,7 +46,7 @@ Identifier Resolution Performance 标识符识别性能
 demo: identifier.htm
 
 此函数包含三个对document 的引用，document 是一个全局对象。搜索此变量，必须遍历整个作用域链，直到最后在全局变量对象中找到它。你可以通过这种方法减轻重复的全局变量访问对性能的影响：首先将全局变量的引用存储在一个局部变量中，然后使用这个局部变量代替全局变量。
-demo: identifier-modifity.htm
+demo: identifier-modify.htm
 
 
 Scope Chain Augmentation 改变作用域链
