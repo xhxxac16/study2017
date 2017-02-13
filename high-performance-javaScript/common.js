@@ -26,15 +26,14 @@ function toArray(coll) {
     return a;
 }
 
-// 将新数据更新到指定节点中
-function appendDataToElement(appendToElement, data) {
-    var a, li;
-    for (var i = 0, max = data.length; i < max; i++) {
-        a = document.createElement('a');
-        a.href = data[i].url;
-        a.appendChild(document.createTextNode(data[i].name));
-        li = document.createElement('li');
-        li.appendChild(a);
-        appendToElement.appendChild(li);
-    }
-};
+// 通用制表函数 memoize(factorial, { "0": 1, "1": 1 })
+function memoize(fundamental, cache){
+    cache = cache || {};
+    var shell = function(arg){
+        if (!cache.hasOwnProperty(arg)){
+            cache[arg] = fundamental(arg);
+        }
+        return cache[arg];
+    };
+    return shell;
+}
