@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eevent</title>
+</head>
+<body>
+    <script>
+        function addHandler(target, eventType, handler){
+            if (target.addEventListener){ //DOM2 Events
+                target.addEventListener(eventType, handler, false);
+            } else { //IE
+                target.attachEvent("on" + eventType, handler);
+            }
+        }
+        function removeHandler(target, eventType, handler){
+            if (target.removeEventListener){ //DOM2 Events
+                target.removeEventListener(eventType, handler, false);
+            } else { //IE
+                target.detachEvent("on" + eventType, handler);
+            }
+        }
+    </script>
+</body>
+</html>

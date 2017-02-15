@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>string</title>
+</head>
+<body>
+    <script>
+        var num1 = 5,
+        num2 = 6,
+        //eval_r() evaluating a string of code
+        result = eval("num1 + num2"),
+        //Function() evaluating strings of code
+        sum = new Function("arg1", "arg2", "return arg1 + arg2");
+        //setTimeout() evaluating a string of code
+        setTimeout("sum = num1 + num2", 100);
+        //setInterval() evaluating a string of code
+        setInterval("sum = num1 + num2", 100);
+    </script>
+</body>
+</html>

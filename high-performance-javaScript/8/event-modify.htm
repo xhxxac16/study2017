@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eevent</title>
+</head>
+<body>
+    <script>
+        function addHandler(target, eventType, handler){
+            //overwrite the existing function
+            if (target.addEventListener){ //DOM2 Events
+                addHandler = function(target, eventType, handler){
+                    target.addEventListener(eventType, handler, false);
+                };
+            } else { //IE
+                addHandler = function(target, eventType, handler){
+                target.attachEvent("on" + eventType, handler);
+                };
+            }
+            //call the new function
+            addHandler(target, eventType, handler);
+        }
+
+        function removeHandler(target, eventType, handler){
+            //overwrite the existing function
+            if (target.removeEventListener){ //DOM2 Events
+                removeHandler = function(target, eventType, handler){
+                    target.addEventListener(eventType, handler, false);
+                };
+            } else { //IE
+                removeHandler = function(target, eventType, handler){
+                    target.detachEvent("on" + eventType, handler);
+                };
+            }
+            //call the new function
+            removeHandler(target, eventType, handler);
+        }
+    </script>
+</body>
+</html>
