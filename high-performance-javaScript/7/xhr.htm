@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xhr</title>
+</head>
+<body>
+    <script>
+        var url = '/data.php';
+        var params = [
+        'id=934875',
+        'limit=20'
+        ];
+        var req = new XMLHttpRequest();
+        req.onreadystatechange = function() {
+            if (req.readyState === 4) { // All data has been received.
+                var responseHeaders = req.getAllResponseHeaders(); // Get the response headers.
+                var data = req.responseText; // Get the data.
+                // Process the data here...
+            }
+
+            if (req.readyState === 3) { // Some, but not all, data has been received.
+                var dataSoFar = req.responseText;
+                ...
+            }
+        }
+        req.open('GET', url + '?' + params.join('&'), true);
+        req.setRequestHeader('X-Requested-With', 'XMLHttpRequest'); // Set a request header.
+        req.send(null); // Send the request.
+
+    </script>
+</body>
+</html>

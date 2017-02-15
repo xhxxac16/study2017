@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xml 解析</title>
+</head>
+<body>
+    <script>
+        function parseXML(responseXML) {
+            var users = [];
+            var userNodes = responseXML.getElementsByTagName_r('users');
+            for (var i = 0, len = userNodes.length; i < len; i++) {
+                users[i] = {
+                    id: userNodes[i].getAttribute('id'),
+                    username: userNodes[i].getAttribute('username'),
+                    realname: userNodes[i].getAttribute('realname'),
+                    email: userNodes[i].getAttribute('email')
+                };
+            }
+            return users;
+        }
+    </script>
+</body>
+</html>

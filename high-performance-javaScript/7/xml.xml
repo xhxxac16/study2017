@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<users total="4">
+    <user id="1">
+        <username>alice</username>
+        <realname>Alice Smith</realname>
+        <email>alice@alicesmith.com</email>
+    </user>
+    <user id="2">
+        <username>bob</username>
+        <realname>Bob Jones</realname>
+        <email>bob@bobjones.com</email>
+    </user>
+    <user id="3">
+        <username>carol</username>
+        <realname>Carol Williams</realname>
+        <email>carol@carolwilliams.com</email>
+    </user>
+    <user id="4">
+        <username>dave</username>
+        <realname>Dave Johnson</realname>
+        <email>dave@davejohnson.com</email>
+    </user>
+</users>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xml 解析</title>
+</head>
+<body>
+    <script>
+        function parseXML(responseXML) {
+            var users = [];
+            var userNodes = responseXML.getElementsByTagName('users');
+            var node, usernameNodes, usernameNode, username,
+            realnameNodes, realnameNode, realname,
+            emailNodes, emailNode, email;
+            for (var i = 0, len = userNodes.length; i < len; i++) {
+                node = userNodes[i];
+                username = realname = email = '';
+                usernameNodes = node.getElementsByTagName('username');
+                if (usernameNodes && usernameNodes[0]) {
+                    usernameNode = usernameNodes[0];
+                    username = (usernameNodes.firstChild) ?
+                    usernameNodes.firstChild.nodeValue : '';
+                }
+                realnameNodes = node.getElementsByTagName('realname');
+                if (realnameNodes && realnameNodes[0]) {
+                    realnameNode = realnameNodes[0];
+                    realname = (realnameNodes.firstChild) ?
+                    realnameNodes.firstChild.nodeValue : '';
+                }
+                emailNodes = node.getElementsByTagName('email');
+                if (emailNodes && emailNodes[0]) {
+                    emailNode = emailNodes[0];
+                    email = (emailNodes.firstChild) ?
+                    emailNodes.firstChild.nodeValue : '';
+                }
+                users[i] = {
+                id: node.getAttribute('id'),
+                username: username,
+                realname: realname,
+                email: email
+                };
+            }
+            return users;
+        }
+    </script>
+</body>
+</html>

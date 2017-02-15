@@ -1,0 +1,6 @@
+[
+{ "i": 1, "u": "alice", "r": "Alice Smith", "e": "alice@alicesmith.com" },
+{ "i": 2, "u": "bob", "r": "Bob Jones", "e": "bob@bobjones.com" },
+{ "i": 3, "u": "carol", "r": "Carol Williams", "e": "carol@carolwilliams.com" },
+{ "i": 4, "u": "dave", "r": "Dave Johnson", "e": "dave@davejohnson.com" }
+]

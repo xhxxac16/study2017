@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<users total="4">
+<user id="1-id001" username="alice" realname="Alice Smith" email="alice@alicesmith.com" />
+<user id="2-id001" username="bob" realname="Bob Jones" email="bob@bobjones.com" />
+<user id="3-id001" username="carol" realname="Carol Williams" email="carol@carolwilliams.com" />
+<user id="4-id001" username="dave" realname="Dave Johnson" email="dave@davejohnson.com" />
+</users>

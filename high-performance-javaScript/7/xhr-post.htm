@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XMLHttpRequest</title>
+</head>
+<body>
+    <script>
+        var url = '/data.php';
+        var params = [
+        'id=934875',
+        'limit=20'
+        ];
+        var req = new XMLHttpRequest();
+        req.onerror = function() {
+        // Error.
+        };
+        req.onreadystatechange = function() {
+        if (req.readyState == 4) {
+        // Success.
+        }
+        };
+        req.open('POST', url, true);
+        req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        req.setRequestHeader('Content-Length', params.length);
+        req.send(params.join('&'));
+    </script>
+</body>
+</html>

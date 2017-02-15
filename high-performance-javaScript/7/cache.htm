@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cache</title>
+</head>
+<body>
+<script>
+    var localCache = {};
+    function xhrRequest(url, callback) {
+        // Check the local cache for this URL.
+        if (localCache[url]) {
+            callback.success(localCache[url]);
+            return;
+        }
+        // If this URL wasn't found in the cache, make the request.
+        var req = createXhrObject();
+        req.onerror = function() {
+            callback.error();
+        };
+        req.onreadystatechange = function() {
+            if (req.readyState == 4) {
+                if (req.responseText === '' || req.status == '404') {
+                    callback.error();
+                    return;
+                }
+                // Store the response on the local cache.
+                localCache[url] = req.responseText;
+                callback.success(req.responseText);
+            }
+        };
+        req.open("GET", url, true);
+        req.send(null);
+    }
+</script>
+</body>
+</html>

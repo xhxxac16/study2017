@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MXHR</title>
+</head>
+<body>
+    <script>
+        var req = new XMLHttpRequest();
+        var getLatestPacketInterval, lastLength = 0;
+        req.open('GET', 'rollup_images.php', true);
+        req.onreadystatechange = readyStateHandler;
+        req.send(null);
+        function readyStateHandler{
+            if (req.readyState === 3 && getLatestPacketInterval === null) {
+                // Start polling.
+                getLatestPacketInterval = window.setInterval(function() {
+                    getLatestPacket();
+                }, 15);
+            }
+            if (req.readyState === 4) {
+                // Stop polling.
+                clearInterval(getLatestPacketInterval);
+                // Get the last packet.
+                getLatestPacket();
+            }
+        }
+        function getLatestPacket() {
+            var length = req.responseText.length;
+            var packet = req.responseText.substring(lastLength, length);
+            processPacket(packet);
+            lastLength = length;
+        }
+    </script>
+</body>
+</html>
