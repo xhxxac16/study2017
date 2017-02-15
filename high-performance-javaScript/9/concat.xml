@@ -1,0 +1,9 @@
+<target name="js.concatenate">
+<concat destfile="${build.dir}/concatenated.js">
+<filelist dir="${src.dir}"
+files="a.js, b.js"/>
+<fileset dir="${src.dir}"
+includes="*.js"
+excludes="a.js, b.js"/>
+</concat>
+</target>
