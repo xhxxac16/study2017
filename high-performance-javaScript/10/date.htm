@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>date</title>
+</head>
+<body>
+    <script>
+        var start = new Date(),
+        count = 10000,
+        i, element, time;
+        for (i = 0; i < count; i++) {
+        element = document.createElement ('div');
+        }
+        time = new Date() - start;
+        alert('created ' + count + ' in ' + time + 'ms');
+        start = new Date();
+        for (i = 0, i < count; i++) {
+        element = element.cloneNode(false);
+        }
+        time = new Date() - start;
+        alert('created ' + count + ' in ' + time + 'ms');
+    </script>
+</body>
+</html>
